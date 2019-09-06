@@ -1,2 +1,1 @@
-# ipms_service
-
+可以通过XML文件批量转换成Java的Bean
