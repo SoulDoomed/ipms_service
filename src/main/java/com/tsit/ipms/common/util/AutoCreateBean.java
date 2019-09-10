@@ -21,8 +21,13 @@ public class AutoCreateBean {
 
     //生成对象的包路径
     private static String packageStr = "com.tsit.ipms.entity";
+    //"/Users/cktk/Documents/ts-it/ipms_service/src/main/java/com/tsit/ipms/entity"
    //保存文件的路径
-    final static File javaBeanPath = new File("/Users/cktk/Documents/ts-it/ipms_service/src/main/java/com/tsit/ipms/entity");
+
+
+   final static File javaBeanPath = new File(System.getProperty("user.dir") + "/src/main/java/" + packageStr.replace(".", "/"));
+
+
 
     private static boolean isOverwrite = false;
 
@@ -46,15 +51,8 @@ public class AutoCreateBean {
         System.out.println(xmlPath.getPath());
         SAXReader reader = new SAXReader();
 
-        Document document = null;
-        try {
-            document = reader.read(xmlPath);
-        } catch (Exception e) {
-            reader.setEncoding("GBK2312");
-            document = reader.read(xmlPath);
+        Document document = reader.read(xmlPath);
 
-
-        }
 
         Element elemRoot = document.getRootElement();//根结点
         List<Element> one = elemRoot.elements();//所有子节点
@@ -405,17 +403,9 @@ public class AutoCreateBean {
 
 
     public static void main(String[] args) throws Exception {
-        //xml文件路径
-        //String fileName ="PS02007.xml";
-       // String fileName ="PS02018.xml";
-     //   String fileName ="PS02020.xml";
 
-      getFiles("/Users/cktk/Desktop/番禺消息说明");
-
-
-        //File xmlPath = new File(fileName);
-
-
+        //xml文件所在路径
+        getFiles("/Users/cktk/Documents/ts-it/ipms_service/src/main/resources/queue");
 
 
 
@@ -428,8 +418,6 @@ public class AutoCreateBean {
      */
     public static void getFiles(String path) throws Exception {
         File file = new File(path);
-
-
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             for (int i = 0; i < files.length; i++) {
@@ -474,7 +462,9 @@ public class AutoCreateBean {
      * @return
      */
     public static String getBeanPath(File xmlPath) {
+
         String fileName = getFileName(xmlPath);//获取文件名称
+
         File targetPackage = new File(javaBeanPath + "/" + fileName);//创建实体类存放路径
         if (!targetPackage.exists()) {//如果文件夹不存在
             targetPackage.mkdir();//创建文件夹
@@ -483,6 +473,7 @@ public class AutoCreateBean {
             targetPackage.mkdir();//创建文件夹
         }
         System.out.println(targetPackage.getPath()+"java文件创建的路径");
+
         return targetPackage.getPath();
     }
 
