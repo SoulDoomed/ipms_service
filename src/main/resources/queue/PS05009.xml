@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS05009</Fid>
+		<SourceSysCode>S01</SourceSysCode>
+		<SysFlag>1</SysFlag>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>2019-06-06 17:01:27</MsgDate>
+	</MessageHeader>
+	<ResponseOption>
+		<MsgCount>1</MsgCount>
+	</ResponseOption>
+	<MsgInfo>
+		<Msg lastUpdate="" id="" action="select">
+			<OPER_DATE>20190604155115</OPER_DATE>
+			<OPER_STATUS>2</OPER_STATUS>
+			<OPER_STAFF_INDEX_NO>adminidms</OPER_STAFF_INDEX_NO>
+			<OPER_STAFF_CODE>adminidms</OPER_STAFF_CODE>
+			<OPER_STAFF_NAME>adminidms</OPER_STAFF_NAME>
+			<DISPEN_DEPT_INDEX_NO>6691</DISPEN_DEPT_INDEX_NO>
+			<DISPEN_DEPT_CODE>6691</DISPEN_DEPT_CODE>
+			<DISPEN_DEPT_NAME>西药房</DISPEN_DEPT_NAME>
+			<RETURN_WARD_CODE>999901</RETURN_WARD_CODE>
+			<RETURN_WARD_NAME>金蝶测试病区.</RETURN_WARD_NAME>
+			<ORDER_RETURN_STORAGE_NO>42337</ORDER_RETURN_STORAGE_NO>
+			<BACK_REASON/>
+			<PAT_INDEX_NO>L71655</PAT_INDEX_NO>
+			<INHOSP_NO>2019-0226626-0</INHOSP_NO>
+			<PAT_NAME>苏测试</PAT_NAME>
+			<EMPI_ID>51983</EMPI_ID>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

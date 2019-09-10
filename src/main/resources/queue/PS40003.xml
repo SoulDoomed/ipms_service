@@ -1,0 +1,26 @@
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS40003</Fid>
+		<SourceSysCode>S05</SourceSysCode>
+		<ReturnFlag>-1</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>2019-07-09 13:25:05</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg id="0a263b02-4970-4ec7-bcea-b8f5ab6889b6" lastUpdate="2019-07-09 13:25:05" action="insert">
+			<INHOSP_NUM>1</INHOSP_NUM>
+			<PAT_INDEX_NO>656141</PAT_INDEX_NO>
+			<PAT_NO>2019-0771098-0_1</PAT_NO>
+			<SIGNS_RECORD_NO>0a263b02-4970-4ec7-bcea-b8f5ab6889b6</SIGNS_RECORD_NO>
+			<TEMPERATURE>36.5</TEMPERATURE>
+			<SYSTOLIC_PRESSURE>148.0</SYSTOLIC_PRESSURE>
+			<DIASTOLIC_PRESSURE>95.0</DIASTOLIC_PRESSURE>
+			<BREATHING_RATE>20.0</BREATHING_RATE>
+			<PULSE_RATE>78.0</PULSE_RATE>
+			<WEIGHT>76.0kg</WEIGHT>
+			<SIGNS_INFOR_STATUS/>
+			<MEASURE_DATE>2019-07-09 14:00:00</MEASURE_DATE>
+			<INVALID_FLAG>0</INVALID_FLAG>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

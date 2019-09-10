@@ -1,0 +1,40 @@
+<ESBEntry>
+    <MessageHeader>
+        <Fid>PS02017</Fid>
+        <SourceSysCode>S92</SourceSysCode>
+        <TargetSysCode>S02</TargetSysCode>
+        <ReturnFlag>-1</ReturnFlag>
+        <MsgDate>2019-07-08 10:30:17</MsgDate>
+    </MessageHeader>
+    <MsgInfo>
+        <Msg action="update" lastUpdate="2019-07-08 10:30:17">
+            <CREATE_USER>3953</CREATE_USER>
+            <CREATE_TIME>2019-07-08 10:30:07</CREATE_TIME>
+            <UPDATE_USER>3953</UPDATE_USER>
+            <UPDATE_TIME>2019-07-08 10:30:07</UPDATE_TIME>
+            <DEPT_INDEX_NO>100283</DEPT_INDEX_NO>
+            <DEPT_CODE>2041311</DEPT_CODE>
+            <DEPT_NAME>康复科门诊</DEPT_NAME>
+            <PINYIN_CODE>KFKMZ</PINYIN_CODE>
+            <WUBI_CODE>YTTUY</WUBI_CODE>
+            <SUBOR_HOSPITAL_DISTRICT>2000000</SUBOR_HOSPITAL_DISTRICT>
+            <SUPERIOR_DEPT_CODE>2041300</SUPERIOR_DEPT_CODE>
+            <SUPERIOR_DEPT_NAME>康复科（门）</SUPERIOR_DEPT_NAME>
+            <LOCATION>综合楼二楼/三楼</LOCATION>
+            <DESCR/>
+            <INVALID_FLAG>0</INVALID_FLAG>
+            <IS_WARD>0</IS_WARD>
+            <IS_WARD_NAME>否</IS_WARD_NAME>
+            <DEPT_CATEG_CODE>1</DEPT_CATEG_CODE>
+            <DEPT_CATEG_NAME>医疗科室</DEPT_CATEG_NAME>
+            <CLINIC_DEPT_FLAG>1</CLINIC_DEPT_FLAG>
+            <CLINIC_DEPT_FLAG_NAME>临床</CLINIC_DEPT_FLAG_NAME>
+            <OI_DEPT_FLAG>1</OI_DEPT_FLAG>
+            <MS_DEPT_FLAG>3</MS_DEPT_FLAG>
+            <MR_DEPT_CODE/>
+            <MR_DEPT_NAME/>
+            <UNIFIED_DEPT_CODE/>
+            <VERSION_NUMBER>11448</VERSION_NUMBER>
+        </Msg>
+    </MsgInfo>
+</ESBEntry>

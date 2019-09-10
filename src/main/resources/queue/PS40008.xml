@@ -1,0 +1,29 @@
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS40008</Fid>
+		<SourceSysCode>S62</SourceSysCode>
+		<ReturnFlag>-1</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>2018-06-12 12:12:12</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg id="307,400,029,687" lastUpdate="2019-07-09 13:23:09" action="insert">
+			<PAT_INDEX_NO>2019-0768159-0</PAT_INDEX_NO>
+			<INHOSP_NO>283165</INHOSP_NO>
+			<INHOSP_NUM/>
+			<PAT_NAME>麦炽文</PAT_NAME>
+			<WARD_CODE>101040101</WARD_CODE>
+			<TEST_POINT>午餐后</TEST_POINT>
+			<DATA_RECORD_DATE>2019-07-09 13:15:00</DATA_RECORD_DATE>
+			<SIGNS_CODE>1011</SIGNS_CODE>
+			<SIGNS_NAME>血糖</SIGNS_NAME>
+			<BLOOD_GLUCOSE_NUMERICAL>8.1</BLOOD_GLUCOSE_NUMERICAL>
+			<BLOOD_GLUCOSE_STRING/>
+			<BLOOD_GLUCOSE_CATEG>午餐后</BLOOD_GLUCOSE_CATEG>
+			<SIGNS_UNIT>mmol/L</SIGNS_UNIT>
+			<NOTE/>
+			<RECORD_NURSE_CODE>4606</RECORD_NURSE_CODE>
+			<RECORD_NURSE_NAME>许玉璇</RECORD_NURSE_NAME>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS15031</Fid>
+		<SourceSysCode>S01</SourceSysCode>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>2019-07-09 11:05:12</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg action="insert" lastUpdate="20190709110512">
+			<OUTHOSP_NO>20190709001573</OUTHOSP_NO>
+			<PAT_INDEX_NO>-4036960</PAT_INDEX_NO>
+			<ORIG_DEAL_NO>1253932</ORIG_DEAL_NO>
+			<NEW_DEAL_NO>1253941</NEW_DEAL_NO>
+			<ORIG_INVOICE_NO>1253932</ORIG_INVOICE_NO>
+			<NEW_INVOICE_NO>1253941</NEW_INVOICE_NO>
+			<INVOICE_TYPE>0</INVOICE_TYPE>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS15010</Fid>
+		<SourceSysCode>S01</SourceSysCode>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>20190709100710</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg action="insert" lastUpdate="20190709100710">
+			<VISIT_CARD_NO/>
+			<INHOSP_NO>2019-0770980-0</INHOSP_NO>
+			<PAT_INDEX_NO>-93060</PAT_INDEX_NO>
+			<RECEIPT_NO>AT16492567</RECEIPT_NO>
+			<DEAL_NO>205189</DEAL_NO>
+			<INVOICE_NO>205189</INVOICE_NO>
+			<PROSPECTIVE_PAYMENT>1000</PROSPECTIVE_PAYMENT>
+			<OPER_STATUS>0</OPER_STATUS>
+			<OI_FLAG>2</OI_FLAG>
+			<REDEMPTION_DEAL_NO/>
+			<PAY_METHOD_CODE>4825</PAY_METHOD_CODE>
+			<PAY_DESCR/>
+			<OPER_STAFF_CODE>3033</OPER_STAFF_CODE>
+			<RECORD_DATE>20190709100710</RECORD_DATE>
+			<EMPI_ID>803992732178579456</EMPI_ID>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

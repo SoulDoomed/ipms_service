@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS10021</Fid>
+		<SourceSysCode>S01</SourceSysCode>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>20190709094610</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg action="update" lastUpdate="20190709094610">
+			<INHOSP_INDEX_NO>513844</INHOSP_INDEX_NO>
+			<INHOSP_NO>2019-0770952-0</INHOSP_NO>
+			<PAT_INDEX_NO>-2170126</PAT_INDEX_NO>
+			<PAT_INHOSP_STATUS_CODE>0</PAT_INHOSP_STATUS_CODE>
+			<OPER_STAFF_CODE>0138</OPER_STAFF_CODE>
+			<OPER_DATE>20190709094610</OPER_DATE>
+			<LAST_UPDATE_DATE>20190709094610</LAST_UPDATE_DATE>
+			<ADMIT_DEPT_CODE>1010301</ADMIT_DEPT_CODE>
+			<ADMIT_WARD_CODE>101030101</ADMIT_WARD_CODE>
+			<EMPI_ID>803995570065637376</EMPI_ID>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

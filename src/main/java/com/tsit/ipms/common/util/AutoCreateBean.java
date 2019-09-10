@@ -1,15 +1,8 @@
 package com.tsit.ipms.common.util;
 
-import com.thoughtworks.xstream.XStream;
-import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.ResourceUtils;
-
 import java.io.*;
 import java.util.*;
 
@@ -21,31 +14,32 @@ public class AutoCreateBean {
 
     //生成对象的包路径
     private static String packageStr = "com.tsit.ipms.entity";
-    //"/Users/cktk/Documents/ts-it/ipms_service/src/main/java/com/tsit/ipms/entity"
-   //保存文件的路径
 
 
-   final static File javaBeanPath = new File(System.getProperty("user.dir") + "/src/main/java/" + packageStr.replace(".", "/"));
-
+    //生成实体类存放路径
+    final static File javaBeanPath = new File(System.getProperty("user.dir") + "/src/main/java/" + packageStr.replace(".", "/"));
 
 
     private static boolean isOverwrite = false;
 
 
+    public static void main(String[] args) throws Exception {
 
+        //xml文件所在的文件夹
+        getFiles("/Users/cktk/Documents/ts-it/ipms_service/src/main/resources/queue");
+
+        //PS02047  多一个重复字段
+        //PS05009  缺少一个实体类
+
+    }
 
 
     /**
      * 解析xml文件
      *
-     * @param xmlPath          XML文件
-     *
-     *
-     *
-     *
-     *
-     *
+     * @param xmlPath XML文件
      */
+
     public static void createBean(File xmlPath) throws Exception {
 
         System.out.println(xmlPath.getPath());
@@ -57,21 +51,20 @@ public class AutoCreateBean {
         Element elemRoot = document.getRootElement();//根结点
         List<Element> one = elemRoot.elements();//所有子节点
         //创建PSXXXXX.java文件
-      creatPS(one, xmlPath);
-        int cont =0;
+        creatPS(one, xmlPath);
+        int cont = 0;
         //获取的是一级子标签
-        List<Element>  elementsMsg = new ArrayList<>();  //msg元素标签
+        List<Element> elementsMsg = new ArrayList<>();  //msg元素标签
 
 
         for (Element element : one) {
             List<Element> elements = element.elements();
             for (Element elementTwo : elements) {
-                List<Element>  elements3 = elementTwo.elements();
-
+                List<Element> elements3 = elementTwo.elements();
 
 
                 for (Element element1 : elements3) {
-                    if (!element1.getName().equals("DETAIL")){
+                    if (!element1.getName().equals("DETAIL")) {
                         elementsMsg.add(element1);
 
                     }
@@ -82,8 +75,8 @@ public class AutoCreateBean {
                     //获取所有的DETAIL元素的子标签
                     List<Element> elements2 = element2.elements();
                     //DETAIL的子标签是一样的所以只要一个就行
-                    if (cont==0){  //DETAIL元素的子标签是一样的所以创建MsgDetail文件一次就行
-                       createMsgDetail(elements2,xmlPath);
+                    if (cont == 0) {  //DETAIL元素的子标签是一样的所以创建MsgDetail文件一次就行
+                        createMsgDetail(elements2, xmlPath);
                         cont++;
                     }
 
@@ -93,13 +86,13 @@ public class AutoCreateBean {
             }
         }
 
-        createMsg(elementsMsg,xmlPath);
+        createMsg(elementsMsg, xmlPath);
         createMsgInfo(xmlPath);
 
     }
 
     private static void createMsgInfo(File xmlPath) {
-        String str ="package com.tsit.ipms.entity."+getFileName(xmlPath)+";\n" +
+        String str = "package com.tsit.ipms.entity." + getFileName(xmlPath) + ";\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -132,7 +125,7 @@ public class AutoCreateBean {
                 "}\n";
 
         try {
-            FileWriter fileWriter = new FileWriter(getBeanPath(xmlPath)+"/MsgInfo.java", true);
+            FileWriter fileWriter = new FileWriter(getBeanPath(xmlPath) + "/MsgInfo.java", true);
             fileWriter.write(str);
             fileWriter.flush();
             fileWriter.close();
@@ -145,6 +138,7 @@ public class AutoCreateBean {
 
     /**
      * 创建MSg
+     *
      * @param elements
      * @param xmlPath
      */
@@ -158,9 +152,8 @@ public class AutoCreateBean {
         }
 
 
-
         String fileName = getBeanPath(xmlPath);//获取javabean储存的路径
-        String dir =  fileName +"/Msg.java";
+        String dir = fileName + "/Msg.java";
 
 
         try {
@@ -191,7 +184,7 @@ public class AutoCreateBean {
                 fileWriter.write("\r\n");
                 fileWriter.write("  @XmlElement(name = \"" + element.getName() + "\")");
                 fileWriter.write("\r\n");
-                fileWriter.write("  public void set" + toUpperCaseFirstOne(s) + "(" + "String "  + s + ") {");
+                fileWriter.write("  public void set" + toUpperCaseFirstOne(s) + "(" + "String " + s + ") {");
                 fileWriter.write("\r\n");
                 fileWriter.write("      this." + toUpperCaseFirstOne(s) + " = " + s + ";\r\n");
                 fileWriter.write("  }");
@@ -204,7 +197,7 @@ public class AutoCreateBean {
 
             fileWriter.write("  @Override\r\n");
             fileWriter.write("  public String toString() {\r\n");
-            fileWriter.write("      return \"" +"MsgDetail" + "{\" +");
+            fileWriter.write("      return \"" + "MsgDetail" + "{\" +");
             String[] arr = new String[elements.size()];
 
             for (int i = 0; i < elements.size(); i++) {
@@ -228,20 +221,16 @@ public class AutoCreateBean {
         }
 
 
-
-
-
-
-
     }
 
 
     /**
      * 创建MsgDetail文件
+     *
      * @param elements 需要创建javaBean的标签名称
      * @param xmlPath
      */
-    private static void createMsgDetail(  List<Element> elements , File xmlPath) {
+    private static void createMsgDetail(List<Element> elements, File xmlPath) {
 
         Map<String, String> linkedHashMap = new HashMap<>();
         HashSet<String> strings1 = new HashSet<>();
@@ -252,9 +241,8 @@ public class AutoCreateBean {
         }
 
 
-
         String fileName = getBeanPath(xmlPath);//获取javabean储存的路径
-        String dir =  fileName +"/MsgDetail.java";
+        String dir = fileName + "/MsgDetail.java";
 
 
         try {
@@ -285,7 +273,7 @@ public class AutoCreateBean {
                 fileWriter.write("\r\n");
                 fileWriter.write("  @XmlElement(name = \"" + element.getName() + "\")");
                 fileWriter.write("\r\n");
-                fileWriter.write("  public void set" + toUpperCaseFirstOne(s) + "(" + "String "  + s + ") {");
+                fileWriter.write("  public void set" + toUpperCaseFirstOne(s) + "(" + "String " + s + ") {");
                 fileWriter.write("\r\n");
                 fileWriter.write("      this." + toUpperCaseFirstOne(s) + " = " + s + ";\r\n");
                 fileWriter.write("  }");
@@ -298,7 +286,7 @@ public class AutoCreateBean {
 
             fileWriter.write("  @Override\r\n");
             fileWriter.write("  public String toString() {\r\n");
-            fileWriter.write("      return \"" +"MsgDetail" + "{\" +");
+            fileWriter.write("      return \"" + "MsgDetail" + "{\" +");
             String[] arr = new String[elements.size()];
 
             for (int i = 0; i < elements.size(); i++) {
@@ -329,14 +317,14 @@ public class AutoCreateBean {
      * //生成PSxxxx.java
      *
      * @param elements 节点元素
-     * @param xmlPath     xml文件路径
+     * @param xmlPath  xml文件路径
      */
-    public static void creatPS(List<Element> elements  ,File xmlPath) {
+    public static void creatPS(List<Element> elements, File xmlPath) {
 
 
         String fileName = getBeanPath(xmlPath);//获取javabean储存的路径
 
-        String dir =  fileName +"/"+getFileName(xmlPath) + ".java";
+        String dir = fileName + "/" + getFileName(xmlPath) + ".java";
 
         try {
             FileWriter fileWriter = new FileWriter(dir, true);
@@ -402,18 +390,9 @@ public class AutoCreateBean {
     }
 
 
-    public static void main(String[] args) throws Exception {
-
-        //xml文件所在路径
-        getFiles("/Users/cktk/Documents/ts-it/ipms_service/src/main/resources/queue");
-
-
-
-
-    }
-
     /**
-     * 递归出所有的PS开头并且以txt结尾的文件
+     * 递归出所有的PS开头并且以xml结尾的文件
+     *
      * @param path
      */
     public static void getFiles(String path) throws Exception {
@@ -425,20 +404,18 @@ public class AutoCreateBean {
                     getFiles(files[i].getPath());
                 } else {
                     String name = files[i].getName();
-                    int lastIndexOf = name.lastIndexOf("txt");
+                    int lastIndexOf = name.lastIndexOf("xml");
                     int i1 = name.length() - 3;
-                    if (name.indexOf("PS")==0&&lastIndexOf==i1){
+                    if (name.indexOf("PS") == 0 && lastIndexOf == i1) {
 
 
-                            createBean(files[i]);
+                        createBean(files[i]);
                        /* } catch (Exception e) {
 
                             System.err.println("错误"+files[i].getPath());
 
                             System.out.println("\033[33;4m" + e + "\033[0m");
                         }*/
-
-
                     }
                 }
 
@@ -446,19 +423,15 @@ public class AutoCreateBean {
         }
 
 
-
     }
-
-
-
 
 
     /**
      * 返回文件保存的路径
      *
-     * @param xmlPath  xml 文件的路径
-     *
-     *  creatPath   创建在哪的根目录
+     * @param xmlPath xml 文件的路径
+     *                <p>
+     *                creatPath   创建在哪的根目录
      * @return
      */
     public static String getBeanPath(File xmlPath) {
@@ -472,13 +445,14 @@ public class AutoCreateBean {
             targetPackage.delete();//如果覆盖已存在的先删除
             targetPackage.mkdir();//创建文件夹
         }
-        System.out.println(targetPackage.getPath()+"java文件创建的路径");
+        System.out.println(targetPackage.getPath() + "java文件创建的路径");
 
         return targetPackage.getPath();
     }
 
     /**
      * 获取文件名称
+     *
      * @param file
      * @return
      */

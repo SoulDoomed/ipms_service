@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS15011</Fid>
+		<SourceSysCode>S01</SourceSysCode>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>20190709100607</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg action="delete" lastUpdate="20190709100607">
+			<INHOSP_INDEX_NO>205656</INHOSP_INDEX_NO>
+			<INHOSP_NO>2019-0770465-0</INHOSP_NO>
+			<PAT_INDEX_NO>169947</PAT_INDEX_NO>
+			<OPER_DATE>20190709100607</OPER_DATE>
+			<OPER_STAFF_CODE>2273</OPER_STAFF_CODE>
+			<EMPI_ID>910227400032256000</EMPI_ID>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>

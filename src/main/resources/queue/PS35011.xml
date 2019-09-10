@@ -1,0 +1,21 @@
+<ESBEntry>
+	<MessageHeader>
+		<Fid>PS35011</Fid>
+		<SourceSysCode>S03</SourceSysCode>
+		<ReturnFlag>0</ReturnFlag>
+		<TargetSysCode>S02</TargetSysCode>
+		<MsgDate>2019-07-09 11:08:29</MsgDate>
+	</MessageHeader>
+	<MsgInfo>
+		<Msg id="1" lastUpdate="2019-07-09 11:08:29" action="insert">
+			<ELECTR_REQUISITION_NO/>
+			<ORDER_NO>2815387_M</ORDER_NO>
+			<APPLY_DEPT_CODE>1030311</APPLY_DEPT_CODE>
+			<OPER_DATE>2019-07-09</OPER_DATE>
+			<OPER_STAFF_INDEX_NO>8886</OPER_STAFF_INDEX_NO>
+			<REQUISITION_STATUS>3</REQUISITION_STATUS>
+			<NOTE/>
+			<BAR_CODE_NO>011022706100</BAR_CODE_NO>
+		</Msg>
+	</MsgInfo>
+</ESBEntry>
